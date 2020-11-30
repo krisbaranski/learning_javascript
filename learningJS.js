@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-// //  Fundamentals 1
-=======
 //  Fundamentals 1
 >>>>>>> f021c97a3b1ccf08b27f5dbe6593a825eb858897
 
