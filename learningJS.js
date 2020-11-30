@@ -1,4 +1,4 @@
-//  fundamentals 1
+//  Fundamentals 1
 
 //  linking JavaScript File
 let js = "amazing";
@@ -10,8 +10,6 @@ console.log(23);
 
 let firstName = "Matilda";
 
-console.log(firstName);
-console.log(firstName);
 console.log(firstName);
 
 // Variable name conventions
