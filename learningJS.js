@@ -10,6 +10,14 @@ console.log(23);
 
 let firstName = "Matilda";
 
+<<<<<<< HEAD
+=======
+// let firstName = "Matilda";
+ 
+<<<<<<< HEAD
+// console.log(firstName);
+=======
+>>>>>>> acb374f1dbdea16b7b58c59f4c624b0368b7bc87
 console.log(firstName);
 
 // Variable name conventions
