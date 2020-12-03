@@ -49,6 +49,7 @@ console.log(typeof year);
 
 console.log(typeof null);
 */
+
 // let, const and var
 let age = 30;
 age = 31;
