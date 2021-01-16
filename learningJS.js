@@ -46,3 +46,9 @@ console.log(typeof null);
 ////////////////////////////////////
 // let const var
 
+let age = 41;
+age = 42;
+
+const birthYear = 1979;
+birthYear = 1980;
+
