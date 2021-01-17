@@ -41,7 +41,7 @@ console.log(typeof year);
 
 // falsy defined typeof
 console.log(typeof null);
-*/
+
 
 ////////////////////////////////////
 // let const var
@@ -50,5 +50,45 @@ let age = 41;
 age = 42;
 
 const birthYear = 1979;
-birthYear = 1980;
+// birthYear = 1980; changing const doesnt work!!!
+//  const job;  empty const also doesnt work!!!
+
+var job = 'programmer';
+job = 'teacher';
+
+lastName = 'Baranski';
+console.log(lastName);
+*/
+//////////////////////////////////////
+// Basic Operators
+
+// Math operators
+const now = 2037
+const ageJonas = now - 1991;
+const ageSarah = now - 2018;
+console.log(ageJonas, ageSarah);
+
+console.log(ageJonas * 2, ageSarah / 10, 2 ** 3);
+
+const firstName = 'Kris';
+const lastName = 'Baranski';
+console.log(firstName + ' ' + lastName);
+
+
+// Assignment operators
+let x = 10 + 5; // 15
+x += 10;  // x = x+10, 15+10 = 25
+x *= 4; // x * 4 = 100
+x++; // x +1 = 101
+x--; // x - 1 = 100;
+
+console.log(x);
+
+// Comparison operators
+console.log(ageJonas > ageSarah); // >, <, >=, <=,
+console.log(ageSarah >= 18);
+
+const isFullAge = ageSarah >= 18;
+console.log(now - 1991 > now - 2018);
+
 
