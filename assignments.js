@@ -65,4 +65,16 @@ const description1 = country +
     ' million people speak ' +
     language;
 console.log(description1);
+
+
+
+const language = 'portuguese';
+const country = 'Portugal';
+const continent = 'Europe';
+let population = 11;
+const isIsland = false;
+
+const description1 = `${country} is in ${continent}, and its ${population} million people speak ${language}`;
+console.log(description1);
 */
+
