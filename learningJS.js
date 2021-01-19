@@ -132,7 +132,7 @@ console.log(BMIMark, BMIJohn);
 
 const markHigherBMI = BMIMark > BMIJohn;
 console.log(markHigherBMI);
-*/
+
 
 ////////////////////////////////////////////
 // Strings
@@ -157,4 +157,93 @@ console.log(`String with
 multiple
 lines`);
 
+//////////////////////////////////////
+// Taking decisions IF/ELSE Statements
+
+// const age = 15;
+// const isOldEnough = age >= 18;
+
+// if (isOldEnough) {
+//     console.log('Sarah can start a driving license ');
+// }
+
+// this next is more common
+const age = 15;
+
+if (age >= 18) {
+    console.log('Sarah can start a driving license ');
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young. She has to wait ${yearsLeft} years`);
+}
+
+const birthYear = 2012;
+
+let century;
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
+console.log(century)
+
+
+////////////////////////////////////
+// Coding Chellange #2
+
+const massMark = 95;
+const heightMark = 1.88;
+
+const massJohn = 85;
+const heightJohn = 1.76;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / heightJohn ** 2;
+
+console.log(BMIMark, BMIJohn);
+
+const markHigherBMI = BMIMark > BMIJohn;
+console.log(markHigherBMI);
+
+if (BMIMark > BMIJohn) {
+    console.log("Mark's BMI is higher than John's!");
+} else {
+    console.log("John's BMI is higher than Mark's!");
+}
+
+console.log(`Mark's BMI ${BMIMark} is lower than John´s ${BMIJohn}`);
+
+
+/////////////////////////////////////////
+// Type Conversion and Coersion
+
+// type conversion
+// const inputYear = '1991';
+// console.log(inputYear + 18);
+const inputYear = '1991';
+console.log(Number(inputYear));
+console.log(inputYear + 18);
+
+console.log(Number('Jonas'));
+console.log(typeof NaN);
+
+console.log(String(23));
+
+
+// type coersion
+console.log('I am ' + 23 + ' years old'); // number to string
+console.log('23' - '10' - 3);  // string to number
+console.log('23' / 2);  // string to number
+console.log('23' > '18');  //string to boolean
+
+let n = '1' + 1; // '11'
+n = n - 1; // '11' - 1 = 10
+console.log(n);
+
+2 + 3 + 4 + '5' // 9 '5' = "95"
+'10' - '4' - '3' - 2 + '5' // 1 + '5' = '15'
+*/
+
+////////////////////////////////////////
+// Falsy and truthy Values
 
