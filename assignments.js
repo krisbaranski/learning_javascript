@@ -67,14 +67,29 @@ const description1 = country +
 console.log(description1);
 
 
-
+*/
 const language = 'portuguese';
 const country = 'Portugal';
 const continent = 'Europe';
-let population = 11;
+let population = 130;
 const isIsland = false;
 
 const description1 = `${country} is in ${continent}, and its ${population} million people speak ${language}`;
 console.log(description1);
-*/
+
+// if else
+
+if (population > 33) {
+    console.log(`${country} population is above average`);
+} else {
+    console.log(`${country} population is ${33 - population} million below average`);
+}
+
+
+'9' - '5'; // 4
+'19' - '13' + '17'; // '617'
+'19' - '13' + 17; // 23
+'123' < 57; // false
+5 + 6 + '4' + 9 - 4 - 2; // 1143
+
 
