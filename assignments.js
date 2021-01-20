@@ -67,7 +67,7 @@ const description1 = country +
 console.log(description1);
 
 
-*/
+
 const language = 'portuguese';
 const country = 'Portugal';
 const continent = 'Europe';
@@ -86,10 +86,23 @@ if (population > 33) {
 }
 
 
+// type conversion and coersion
 '9' - '5'; // 4
 '19' - '13' + '17'; // '617'
 '19' - '13' + 17; // 23
 '123' < 57; // false
-5 + 6 + '4' + 9 - 4 - 2; // 1143
+5 + 6 + '4' + 9 - 4 - 2; // '1143'
+*/
 
+// equality operators
 
+const numNeighbours = Number(prompt("How many neighbour countries does your country have ?"));
+console.log(numNeighbours);
+
+if (numNeighbours === 1) {
+    console.log('Only 1 border!');
+} else if (numNeighbours > 1) {
+    console.log('More than 1 border');
+} else {
+    console.log('No borders');
+}
