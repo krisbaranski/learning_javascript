@@ -242,8 +242,64 @@ console.log(n);
 
 2 + 3 + 4 + '5' // 9 '5' = "95"
 '10' - '4' - '3' - 2 + '5' // 1 + '5' = '15'
-*/
+
 
 ////////////////////////////////////////
 // Falsy and truthy Values
+// 5 falsy values: 0, '', undefined, null, NaN
+console.log(Boolean(0));  //False
+console.log(Boolean(''));  //False
+console.log(Boolean(null));  //False
+console.log(Boolean(NaN));   //False
+console.log(Boolean('Jonas'));  // true
+console.log(Boolean({}));   // true
 
+const money = 100;   // if it would be 0 // falsy value!
+if (money) {
+    console.log("Don't spend it all");
+} else {
+    console.log("You should get a job!");
+}
+
+let height = 100;  //if height is undefined or 0 value, it becomes falsy value and execute else statement!
+if (height) {
+    console.log('YAY height is defined!');
+} else {
+    console.log('Height is UNDEFINED!');
+}
+
+
+////////////////////////////////////////
+// Equality Operators
+
+// === (strict)!exactly only! this value, comparison operator, does include coersion
+//  == (loose) doesnt include coersion
+18 === 18;  //true
+18 === 19;  //false
+'18' == 18; // true
+'18' === 18; // false
+
+const age = 18; // '18' makes only loose (true)
+if (age === 18)
+    console.log('Congratulations! You are an adult (strict)');
+
+if (age == 18)
+    console.log('Congratulations! You are an adult (loose)');
+
+const favorite = Number(prompt("What's your favorite number?"));
+console.log(favorite);
+console.log(typeof favorite);
+
+if (favorite === 23) // '23' == 23 , 22 === 23 -> false
+{
+    console.log("Cool! 23 is an amazing number!");
+} else if (favorite === 7) {
+    console.log(" 7 is also a cool number");
+} else {
+    console.log("Number is not 23 or 7");
+}
+
+if (favorite !== 23) {
+    console.log("Why not 23");
+}
+*/
