@@ -302,4 +302,76 @@ if (favorite === 23) // '23' == 23 , 22 === 23 -> false
 if (favorite !== 23) {
     console.log("Why not 23");
 }
+
+
+///////////////////////////////////////////
+// Logical Operators
+const hasDriversLicense = true; // A
+const hasGoodVision = true;  // B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+// if (hasDriversLicense && hasGoodVision) {
+//     console.log("Sarah can drive");
+// } else {
+//     console.log("Someone else should drive...");
+// }
+
+const isTired = false;  // C
+console.log(hasDriversLicense || hasGoodVision || isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log("Sarah can drive");
+} else {
+    console.log("Someone else should drive...");
+}
+
+///////////////////////////////////////////
+// Coding Challenge #3
+// const teamDolphins = (96 + 108 + 89) / 3;
+// const teamKoalas = (88 + 91 + 110) / 3;
+// console.log(teamDolphins, teamKoalas);
+
+// if (teamDolphins > teamKoalas) {
+//     console.log("Dolphins win!");
+// } else if (teamDolphins = teamKoalas) {
+//     console.log("Both teams win")
+// } else {
+//     console.log("Koalas are the winner!");
+// }
+
+
+// Bonus 1
+// const teamDolphins = (97 + 112 + 101) / 3;
+// const teamKoalas = (109 + 95 + 123) / 3;
+// console.log(teamDolphins, teamKoalas);
+
+// if (teamDolphins >= 100 && teamDolphins > teamKoalas) {
+//     console.log("Dolphins win!");
+// } else if (teamKoalas >= 100 && teamKoalas > teamDolphins) {
+//     console.log("Koalas are the winner!");
+// } else {
+//     console.log("Nobody wins");
+// }
+
+
+// Bonus 2
+const teamDolphins = (97 + 112 + 101) / 3;
+const teamKoalas = (109 + 95 + 106) / 3;
+console.log(teamDolphins, teamKoalas);
+
+if (teamDolphins >= 100 && teamDolphins > teamKoalas) {
+    console.log("Dolphins win!");
+} else if (teamKoalas >= 100 && teamKoalas > teamDolphins) {
+    console.log("Koalas are the winner!");
+} else if (teamDolphins >= 100 && teamKoalas >= 100 && teamDolphins === teamKoalas) {
+    console.log("Both teams win!");
+} else {
+    console.log("Nobody wins");
+}
 */
+
+////////////////////////////////////////
+// Switch Statement
