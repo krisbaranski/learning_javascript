@@ -92,7 +92,7 @@ if (population > 33) {
 '19' - '13' + 17; // 23
 '123' < 57; // false
 5 + 6 + '4' + 9 - 4 - 2; // '1143'
-*/
+
 
 // equality operators
 
@@ -106,3 +106,21 @@ if (numNeighbours === 1) {
 } else {
     console.log('No borders');
 }
+
+
+
+// logical operators
+
+const country = 'Portugal';
+const population = 11;
+const language = 'english';
+const isIsland = false;
+
+const newLanguage = 'english';
+
+if (newLanguage === language && population <= 50 && !isIsland) {
+    console.log(`You should live in ${country}:) `);
+} else {
+    console.log(`${country} does not meet your criteria :(`);
+}
+*/
