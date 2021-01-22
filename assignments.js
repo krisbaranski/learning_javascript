@@ -123,7 +123,7 @@ if (newLanguage === language && population <= 50 && !isIsland) {
 } else {
     console.log(`${country} does not meet your criteria :(`);
 }
-*/
+
 
 const country = 'Portugal';
 const population = 13;
@@ -134,3 +134,4 @@ console.log(
     `${country}'s population is ${population > 33 ? 'above' :
         'below'} average`,
 );
+*/
