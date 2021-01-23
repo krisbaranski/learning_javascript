@@ -1,3 +1,5 @@
+'use strict';
+
 /*
 // Values and Variables
 let country = 'Germany';
@@ -124,14 +126,18 @@ if (newLanguage === language && population <= 50 && !isIsland) {
     console.log(`${country} does not meet your criteria :(`);
 }
 
-
-const country = 'Portugal';
-const population = 13;
-
-console.log(population > 33 ? `${country}'s population is above average` : `${country}'s population is below average`);
-
 console.log(
     `${country}'s population is ${population > 33 ? 'above' :
         'below'} average`,
 );
 */
+
+
+/////////////////////////////////////////////
+// fundamentals 2
+// functions
+function describeCountry(Finland, 6, Helsinki)
+
+console.log(`${counrty} has ${population} million people and its
+capital city is ${capitalCity}`);
+
