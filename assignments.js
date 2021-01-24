@@ -130,14 +130,43 @@ console.log(
     `${country}'s population is ${population > 33 ? 'above' :
         'below'} average`,
 );
-*/
+
 
 
 /////////////////////////////////////////////
 // fundamentals 2
 // functions
-function describeCountry(Finland, 6, Helsinki)
+// my first solution ( too long)
+function describeCountry(country, population, capital) {
+    const country1 = (`${country} has ${population} million people and its
+    capital city is ${capital}`);
+    return country1;
+}
+function describeCountry(country, population, capital) {
+    const country2 = (`${country} has ${population} million people and its
+    capital city is ${capital}`);
+    return country2;
+}
+function describeCountry(country, population, capital) {
+    const country3 = (`${country} has ${population} million people and its
+    capital city is ${capital}`);
+    return country3;
+}
 
-console.log(`${counrty} has ${population} million people and its
-capital city is ${capitalCity}`);
+console.log(describeCountry('Finland', 6, 'Helsinki'));
+console.log(describeCountry('Germany', 80, 'Berlin'));
+console.log(describeCountry('Poland', 38, 'Warsaw'));
 
+// right solution!
+function describeCountry(country, population, capital) {
+    return `${country} has ${population} million people and its
+    capital city is ${capital}`;
+}
+const descFinland = describeCountry('Finland', 6, 'Helsinki');
+const descGermany = describeCountry('Germany', 80, 'Berlin');
+const descPoland = describeCountry('Poland', 38, 'Warsaw');
+console.log(descFinland, descGermany, descPoland);
+console.log(descFinland);
+console.log(descGermany);
+console.log(descPoland);
+*/
