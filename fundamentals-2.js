@@ -24,7 +24,7 @@ function logger() { // logger is a name of function
 logger();
 logger();
 logger();
-*/
+
 function fruitProccesor(apples, oranges) {
     console.log(apples, oranges)
     const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
@@ -38,5 +38,17 @@ const appleOrangeJuice = fruitProccesor(2, 4);
 console.log(appleOrangeJuice);
 
 const num = Number('23');
+*/
+const cutPieces = function (fruit) {
+    return fruit * 4;
+}
+const fruitProccesor = function (apples, oranges) {
+    const applePieces = cutPieces(apples);
+    const orangePieces = cutPieces(oranges);
+
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of oranges.`;
+    return juice;
+}
+console.log(fruitProccesor(2, 3));
 
 
