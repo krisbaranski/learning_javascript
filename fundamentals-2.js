@@ -38,7 +38,8 @@ const appleOrangeJuice = fruitProccesor(2, 4);
 console.log(appleOrangeJuice);
 
 const num = Number('23');
-*/
+
+// calling a function inside a function
 const cutPieces = function (fruit) {
     return fruit * 4;
 }
@@ -50,5 +51,23 @@ const fruitProccesor = function (apples, oranges) {
     return juice;
 }
 console.log(fruitProccesor(2, 3));
+*/
 
+// declarations vs. experssions
 
+// Fuction declaration
+function calcAge1(birthYeah) {
+    // const age = 2037 - birthYeah;
+    // return age;
+    return 2037 - birthYeah; // easier "shorter" way
+}
+const age1 = calcAge1(1991);
+
+// Function expression
+const calcAge2 = function (birthYeah) {
+    return 2037 - birthYeah;
+}
+
+const age2 = calcAge2(1991);
+
+console.log(age1, age2);
