@@ -217,4 +217,14 @@ const percChina = percentageOfWorld2(1441);
 const percGermany = percentageOfWorld2(80);
 const percPoland = percentageOfWorld2(38);
 console.log(percChina, percGermany, percPoland);
+
+
+// arrow function
+const percentageOfWorld3 = population => (population / 7900) * 100;
+const percChina = percentageOfWorld3(1441);
+const percGermany = percentageOfWorld3(80);
+const percPoland = percentageOfWorld3(38);
+console.log(percChina, percGermany, percPoland);
 */
+
+
