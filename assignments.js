@@ -79,6 +79,9 @@ const isIsland = false;
 const description1 = `${country} is in ${continent}, and its ${population} million people speak ${language}`;
 console.log(description1);
 
+
+
+
 // if else
 
 if (population > 33) {
@@ -88,12 +91,14 @@ if (population > 33) {
 }
 
 
+
 // type conversion and coersion
 '9' - '5'; // 4
 '19' - '13' + '17'; // '617'
 '19' - '13' + 17; // 23
 '123' < 57; // false
 5 + 6 + '4' + 9 - 4 - 2; // '1143'
+
 
 
 // equality operators
@@ -157,6 +162,7 @@ console.log(describeCountry('Finland', 6, 'Helsinki'));
 console.log(describeCountry('Germany', 80, 'Berlin'));
 console.log(describeCountry('Poland', 38, 'Warsaw'));
 
+
 // right solution!
 function describeCountry(country, population, capital) {
     return `${country} has ${population} million people and its
@@ -169,4 +175,46 @@ console.log(descFinland, descGermany, descPoland);
 console.log(descFinland);
 console.log(descGermany);
 console.log(descPoland);
+
+
+
+// declaration vs. expression
+function percentageOfWorld1(population,) {
+
+    const worldPolulation = 7900
+    const country1 = population / worldPolulation * 100;
+    return country1;
+}
+const population1 = percentageOfWorld1(1441);
+
+console.log(percentageOfWorld1(1441));
+console.log(percentageOfWorld1(80));
+console.log(percentageOfWorld1(38));
+
+
+const percentageOfWorld2 = function (population) {
+    const worldPolulation = 7900;
+    return population / worldPolulation * 100;
+}
+const population2 = percentageOfWorld2(80);
+
+console.log(percentageOfWorld1(1441));
+console.log(percentageOfWorld1(80));
+console.log(percentageOfWorld1(38));
+
+
+
+// right way to write thia example
+function percentageOfWorld1(population) {
+    return (population / 7900) * 100;
+}
+
+const percentageOfWorld2 = function (population) {
+    return (population / 7900) * 100;
+}
+
+const percChina = percentageOfWorld2(1441);
+const percGermany = percentageOfWorld2(80);
+const percPoland = percentageOfWorld2(38);
+console.log(percChina, percGermany, percPoland);
 */
