@@ -39,19 +39,6 @@ console.log(appleOrangeJuice);
 
 const num = Number('23');
 
-// calling a function inside a function
-const cutPieces = function (fruit) {
-    return fruit * 4;
-}
-const fruitProccesor = function (apples, oranges) {
-    const applePieces = cutPieces(apples);
-    const orangePieces = cutPieces(oranges);
-
-    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of oranges.`;
-    return juice;
-}
-console.log(fruitProccesor(2, 3));
-
 
 // declarations vs. experssions
 
@@ -91,8 +78,43 @@ const yearsUntilRetirement = (birthYeah, firstName) => {
 }
 console.log(yearsUntilRetirement(1991, 'Jonas'));
 console.log(yearsUntilRetirement(1988, 'Bob'));
+
+
+
+// function calling other functions
+const cutPieces = function (fruit) {
+    return fruit * 4;
+}
+const fruitProccesor = function (apples, oranges) {
+    const applePieces = cutPieces(apples);
+    const orangePieces = cutPieces(oranges);
+
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of oranges.`;
+    return juice;
+}
+console.log(fruitProccesor(2, 3));
+
+
+//
+const calcAge = function (year) {
+    return 2037 - year;
+}
+
+const yearsUntilRetirement = function (birthYeah, firstName) {
+    const age = calcAge(birthYeah);
+    const retirement = 65 - age;
+
+    if (retirement > 0) {
+        console.log(`${firstName} retires in ${retirement} years`); // .log before return works!!!!
+        return retirement; // .log after return is not possible
+
+    } else {
+        return `${firstName} is retired already`;
+    }
+
+}
+console.log(yearsUntilRetirement(1991, 'Jonas'));
+console.log(yearsUntilRetirement(1970, 'Mike'));
 */
 
-
-// 
 
