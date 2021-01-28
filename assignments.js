@@ -225,6 +225,24 @@ const percChina = percentageOfWorld3(1441);
 const percGermany = percentageOfWorld3(80);
 const percPoland = percentageOfWorld3(38);
 console.log(percChina, percGermany, percPoland);
+
+
+// Functions Calling Other Functions
+
+
+const describePopulation = function (country, population) {
+    const percentage = percentageOfWorld1(population);
+    const description = `${country} has ${population} million
+    people, which is about ${percentage}% of the world.`;
+    console.log(description);
+}
+const percentageOfWorld1 = population => (population / 7900) * 100;
+const percChina = percentageOfWorld1(1441);
+const percGermany = percentageOfWorld1(80);
+const percPoland = percentageOfWorld1(38);
+console.log(percChina, percGermany, percPoland);
+
+describePopulation('Portugal', 10);
+describePopulation('China', 1441);
+describePopulation('USA', 332);
 */
-
-
