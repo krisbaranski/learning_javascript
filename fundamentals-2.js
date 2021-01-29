@@ -1,9 +1,10 @@
 'use strict';
+//Activating Strict Mode
+
+
 
 /*
 //////////////////////////////////////
-//Activating Strict Mode
-
 let hasDriversLicense = false;
 const passTest = true;
 
@@ -14,7 +15,9 @@ if (hasDriversLicense) console.log('I can drive');
 // const private = 345;      'private' reserved as defined variables and can't be used
 // const if;            'if' reserved as defined variables and can't be used
 
-//////////////////////////////
+
+
+/////////////////////////////////////////////////////
 // FUNCTIONS
 
 function logger() { // logger is a name of function
@@ -38,6 +41,7 @@ const appleOrangeJuice = fruitProccesor(2, 4);
 console.log(appleOrangeJuice);
 
 const num = Number('23');
+
 
 
 // declarations vs. experssions
@@ -95,7 +99,7 @@ const fruitProccesor = function (apples, oranges) {
 console.log(fruitProccesor(2, 3));
 
 
-//
+
 const calcAge = function (year) {
     return 2037 - year;
 }
@@ -116,5 +120,9 @@ const yearsUntilRetirement = function (birthYeah, firstName) {
 console.log(yearsUntilRetirement(1991, 'Jonas'));
 console.log(yearsUntilRetirement(1970, 'Mike'));
 */
+
+
+
+
 
 
