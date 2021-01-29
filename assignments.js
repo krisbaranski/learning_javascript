@@ -1,5 +1,6 @@
 'use strict';
 
+
 /*
 // Values and Variables
 let country = 'Germany';
@@ -9,6 +10,8 @@ let population = '80';
 console.log(country);
 console.log(continent);
 console.log(population);
+console.log(`I live in ${country} in  ${continent} and the population is ${population} million people`);
+
 
 
 // Data Types
@@ -19,6 +22,7 @@ console.log(typeof isIsland);
 console.log(typeof population);
 console.log(typeof country);
 console.log(typeof language);
+
 
 
 // let const var
@@ -34,8 +38,9 @@ const continent = 'Europe';
 let population = 11;
 const isIsland = false;
 */
-// basic operations
 
+
+// basic operations
 /* my way but compilcated...wrong
 // const population = 80;
 // let halfCountry = population / 2;
@@ -138,8 +143,12 @@ console.log(
 
 
 
-/////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////
 // fundamentals 2
+
 // functions
 // my first solution ( too long)
 function describeCountry(country, population, capital) {
@@ -203,7 +212,6 @@ console.log(percentageOfWorld1(80));
 console.log(percentageOfWorld1(38));
 
 
-
 // right way to write thia example
 function percentageOfWorld1(population) {
     return (population / 7900) * 100;
@@ -219,6 +227,7 @@ const percPoland = percentageOfWorld2(38);
 console.log(percChina, percGermany, percPoland);
 
 
+
 // arrow function
 const percentageOfWorld3 = population => (population / 7900) * 100;
 const percChina = percentageOfWorld3(1441);
@@ -227,8 +236,8 @@ const percPoland = percentageOfWorld3(38);
 console.log(percChina, percGermany, percPoland);
 
 
-// Functions Calling Other Functions
 
+// Functions Calling Other Functions
 
 const describePopulation = function (country, population) {
     const percentage = percentageOfWorld1(population);
@@ -246,3 +255,4 @@ describePopulation('Portugal', 10);
 describePopulation('China', 1441);
 describePopulation('USA', 332);
 */
+
