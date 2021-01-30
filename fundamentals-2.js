@@ -119,9 +119,59 @@ const yearsUntilRetirement = function (birthYeah, firstName) {
 }
 console.log(yearsUntilRetirement(1991, 'Jonas'));
 console.log(yearsUntilRetirement(1970, 'Mike'));
+
+
+
+
+// Coding Challenge #1
+const calcAverage = score => score;
+// const scoreD = (44 + 23 + 71) / 3;
+// const scoreK = (65 + 54 + 49) / 3;
+const scoreD = (85 + 54 + 41) / 3;
+const scoreK = (23 + 34 + 27) / 3;
+
+console.log(calcAverage(scoreD));
+console.log(calcAverage(scoreK));
+
+function checkWinner(avgDolphins, avgKoalas) {
+    if (avgDolphins >= (2 * avgKoalas)) {
+        return `Dolphins win (${avgDolphins} vs. ${avgKoalas})`;
+    } else if (avgKoalas >= (2 * avgDolphins)) {
+        return `Koalas win (${avgKoalas} vs. ${avgDolphins})`
+    } else {
+        return `Nobody wins`;
+    }
+}
+checkWinner(scoreD, scoreK);
+checkWinner(524, 111);
 */
 
 
+//right solution
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+// Test 1
+let scoreDolphins = calcAverage(44, 23, 71); // !!const changed to let
+let scoreKoalas = calcAverage(65, 54, 49);   // !!const changed to let
+console.log(scoreDolphins, scoreKoalas);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+    if (avgDolphins >= 2 * avgKoalas) {
+        console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+    } else if (avgKoalas >= (2 * avgDolphins)) {
+        console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+    } else {
+        console.log(`Nobody wins`);
+    }
+}
+checkWinner(scoreDolphins, scoreKoalas);
+checkWinner(541, 111);
+
+// Test 2
+scoreDolphins = calcAverage(85, 54, 41); // !!const changed to let but not overwrite (let) only change value
+scoreKoalas = calcAverage(23, 34, 27);   // !!const changed to let but not overwrite (let) only change value
+console.log(scoreDolphins, scoreKoalas);
+checkWinner(scoreDolphins, scoreKoalas);
 
 
 
