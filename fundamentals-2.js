@@ -169,7 +169,7 @@ scoreDolphins = calcAverage(85, 54, 41); // !!const changed to let but not overw
 scoreKoalas = calcAverage(23, 34, 27);   // !!const changed to let but not overwrite (let) only change value
 console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
-*/
+
 
 
 ///////////////////////////////////////////
@@ -213,7 +213,42 @@ console.log(age1, age2, age3);
 const ages = [calcAge2(years[0]), calcAge2(years[1]), calcAge2(years.length - 1)];
 console.log(ages);
 
+*/
+
+// Basic Array Operations (Methods)
+const friends = ['MIchael', 'Steven', 'Peter'];
+
+// Add elements
+const newLenght = friends.push('Jay');
+console.log(friends);
+console.log(newLenght);
+
+friends.unshift('John');
+console.log(friends);
+
+// Remove elements
+friends.pop(); // Last will be removed
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+friends.shift(); // moving second to first position (removing unshift from before)
+console.log(friends);
+
+console.log(friends.indexOf('Steven'));
+console.log(friends.indexOf('Bob'));
+
+friends.push(23);
+console.log(friends.includes('Steven'));
+console.log(friends.includes('Bob'));
+console.log(friends.includes('23')); //string is not included
+console.log(friends.includes(23));  // number is included
+
+if (friends.includes('Steven')) {
+    console.log('You have friend called Steven');
+}
 
 
+// Coding Challenge #2
 
 
