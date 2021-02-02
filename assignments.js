@@ -1,5 +1,15 @@
 'use strict';
 
+///////////////////////// Epoxidharz Calculator /////////////////////////////////////
+const calcEpoxy = (h, w, d) => (h * w * d) / 900;
+
+const howMuchEpoxy = calcEpoxy(90, 25, 0.1); //here you put data to calculate Epoxy!!
+
+console.log(howMuchEpoxy);
+////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /*
 // Values and Variables
@@ -256,3 +266,17 @@ describePopulation('China', 1441);
 describePopulation('USA', 332);
 */
 
+
+
+// Arrays
+const populations = [10, 1441, 332, 83];
+console.log(populations.length === 4);
+
+const percentageOfWorld1 = populations => (populations / 7900) * 100;
+const percentages = [
+    percentageOfWorld1(populations[0]),
+    percentageOfWorld1(populations[1]),
+    percentageOfWorld1(populations[2]),
+    percentageOfWorld1(populations[3])
+];
+console.log(percentages);
