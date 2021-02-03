@@ -5,7 +5,7 @@ const calcEpoxy = (h, w, d) => (h * w * d) / 900;
 
 const howMuchEpoxy = calcEpoxy(34, 8, 2); //here you put data to calculate Epoxy!!
 
-console.log(howMuchEpoxy);
+console.log(`I must use ${howMuchEpoxy} kg Epoxy`);
 ////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -280,7 +280,7 @@ const percentages = [
     percentageOfWorld1(populations[3])
 ];
 console.log(percentages);
-*/
+
 
 
 // Basic Array Operations (Methods)
@@ -307,3 +307,7 @@ neighbours.unshift('Sweden');
 
 neighbours[neighbours.indexOf('Sweden')] = 'Republic of Sweden'; // here i dont need to know it!!
 console.log(neighbours);
+*/
+
+
+//Objects
