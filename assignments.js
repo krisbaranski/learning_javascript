@@ -3,7 +3,7 @@
 ///////////////////////// Epoxidharz Calculator /////////////////////////////////////
 const calcEpoxy = (h, w, d) => (h * w * d) / 900;
 
-const howMuchEpoxy = calcEpoxy(90, 25, 0.1); //here you put data to calculate Epoxy!!
+const howMuchEpoxy = calcEpoxy(34, 8, 2); //here you put data to calculate Epoxy!!
 
 console.log(howMuchEpoxy);
 ////////////////////////////////////////////////////////////////////////////////////
@@ -264,7 +264,7 @@ console.log(percChina, percGermany, percPoland);
 describePopulation('Portugal', 10);
 describePopulation('China', 1441);
 describePopulation('USA', 332);
-*/
+
 
 
 
@@ -280,3 +280,30 @@ const percentages = [
     percentageOfWorld1(populations[3])
 ];
 console.log(percentages);
+*/
+
+
+// Basic Array Operations (Methods)
+const neighbours = ['Poland', 'Czech Rep', 'Austria', 'France', 'Denmark'];
+console.log(neighbours);
+
+neighbours.push('Utopia');
+console.log(neighbours);
+
+neighbours.pop('Utopia');
+console.log(neighbours);
+
+if (!neighbours.includes('Germany')) {
+    console.log('Probably not a central European country :D');
+}
+
+// my version!!
+neighbours.unshift('Sweden');
+// neighbours.indexOf('Sweden');
+// console.log(neighbours);
+
+// neighbours[0] = 'Republic of Sweden';            // here i would need to know place of ''!!!!
+// console.log(neighbours);
+
+neighbours[neighbours.indexOf('Sweden')] = 'Republic of Sweden'; // here i dont need to know it!!
+console.log(neighbours);
