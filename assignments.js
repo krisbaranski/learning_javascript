@@ -307,7 +307,18 @@ neighbours.unshift('Sweden');
 
 neighbours[neighbours.indexOf('Sweden')] = 'Republic of Sweden'; // here i dont need to know it!!
 console.log(neighbours);
-*/
+
 
 
 //Objects
+const myCountry = {
+    country: 'Poland',
+    capital: 'Warsaw',
+    language: 'Polish',
+    population: 38,
+    neighbours: ['Germany', 'Czech', 'Slowakia', 'Ukraine']
+}
+console.log(myCountry);
+*/
+
+// Dot vs. Bracket
