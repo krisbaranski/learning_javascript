@@ -3,10 +3,19 @@
 ///////////////////////// Epoxidharz Calculator /////////////////////////////////////
 const calcEpoxy = (h, w, d) => (h * w * d) / 900;
 
-const howMuchEpoxy = calcEpoxy(34, 8, 2); //here you put data to calculate Epoxy!!
+const howMuchEpoxy = calcEpoxy(20, 170, 4); //here you put data to calculate Epoxy!!
 
 console.log(`I must use ${howMuchEpoxy} kg Epoxy`);
-////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////
+
+const calcMaterial = (h, w, d) => (h * w * d) / 30;
+
+const howMuchMoney = calcMaterial(170, 85, 4); //here you put data to calculate Epoxy!!
+
+console.log(`I take ${howMuchMoney} €`);
+
+
+////////////////////////////////////////
 
 
 
