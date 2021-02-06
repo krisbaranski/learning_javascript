@@ -22,6 +22,7 @@ console.log(`I take ${howMuchMoney} €`);
 
 /*
 // Values and Variables
+
 let country = 'Germany';
 let continent = 'Europe';
 let population = '80';
@@ -34,6 +35,7 @@ console.log(`I live in ${country} in  ${continent} and the population is ${popul
 
 
 // Data Types
+
 let isIsland = false;
 let language;
 
@@ -45,6 +47,7 @@ console.log(typeof language);
 
 
 // let const var
+
 let language = 'german';
 const country = 'germany';
 const continent = 'europe';
@@ -60,6 +63,7 @@ const isIsland = false;
 
 
 // basic operations
+
 /* my way but compilcated...wrong
 // const population = 80;
 // let halfCountry = population / 2;
@@ -117,6 +121,7 @@ if (population > 33) {
 
 
 // type conversion and coersion
+
 '9' - '5'; // 4
 '19' - '13' + '17'; // '617'
 '19' - '13' + 17; // 23
@@ -169,6 +174,7 @@ console.log(
 // fundamentals 2
 
 // functions
+
 // my first solution ( too long)
 function describeCountry(country, population, capital) {
     const country1 = (`${country} has ${population} million people and its
@@ -207,6 +213,7 @@ console.log(descPoland);
 
 
 // declaration vs. expression
+
 function percentageOfWorld1(population,) {
 
     const worldPolulation = 7900
@@ -248,6 +255,7 @@ console.log(percChina, percGermany, percPoland);
 
 
 // arrow function
+
 const percentageOfWorld3 = population => (population / 7900) * 100;
 const percChina = percentageOfWorld3(1441);
 const percGermany = percentageOfWorld3(80);
@@ -278,6 +286,7 @@ describePopulation('USA', 332);
 
 
 // Arrays
+
 const populations = [10, 1441, 332, 83];
 console.log(populations.length === 4);
 
@@ -293,6 +302,7 @@ console.log(percentages);
 
 
 // Basic Array Operations (Methods)
+
 const neighbours = ['Poland', 'Czech Rep', 'Austria', 'France', 'Denmark'];
 console.log(neighbours);
 
@@ -320,14 +330,82 @@ console.log(neighbours);
 
 
 //Objects
+
 const myCountry = {
     country: 'Poland',
     capital: 'Warsaw',
-    language: 'Polish',
+    language: 'polish',
     population: 38,
     neighbours: ['Germany', 'Czech', 'Slowakia', 'Ukraine']
+
+
+    // describe: function () {
+    // // // // // this.describe = (`${myCountry.country} has ${myCountry.language} million ${myCountry.language} -speaking ${myCountry.neighbours.length} neighbouring and a capital called ${myCountry.capital}.`);
+    // return this.describe;
+    // }
 }
 console.log(myCountry);
-*/
+console.log(describe.myCountry);
+
 
 // Dot vs. Bracket
+
+// console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language} -speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`);
+
+myCountry.population += 2;
+console.log(myCountry.population);
+
+myCountry[`population`] -= 2;
+console.log(myCountry.population);
+
+
+// Object Method
+const myCountry = {
+    country: 'Poland',
+    capital: 'Warsaw',
+    language: 'polish',
+    population: 38,
+    neighbours: ['Germany', 'Czech', 'Slowakia',
+        'Ukraine'],
+
+    describe: function () {
+        return `${this.country} has ${this.
+            population} million ${this.language}-speaking
+        people, ${this.neighbours.length} neighbouring 
+        countries and a capital called ${this.capital}.`;
+    }
+    chsckisIsland = isIsland ? myCountry.neighbours.
+length = 0 : myCountry.neighbours.length >= 1;
+};
+
+console.log(myCountry.describe());
+myCountry.isIsland = isIsland ? myCountry.neighbours.length = 0 : myCountry.neighbours.length >= 1;
+*/
+
+const myCountry = {
+    country: 'Finland',
+    capital: 'Helsinki',
+    language: 'finnish',
+    population: 6,
+    neighbours: ['Norway', 'Sweden', 'Russia'],
+
+    describe: function () {
+        console.log(
+            `${this.country} has ${this.population} million
+    ${this.language}-speaking people,
+    ${this.neighbours.length} neighbouring countries and a
+    capital called ${this.capital}.`
+        );
+    },
+
+    checkIsland: function () {
+        this.isIsland = this.neighbours.length === 0 ? true :
+            false;
+        // Even simpler version (see why this works...)
+        this.isIsland = !Boolean(this.neighbours.length);
+    }
+};
+myCountry.describe();
+myCountry.checkIsland();
+console.log(myCountry);
+
