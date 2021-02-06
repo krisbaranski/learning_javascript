@@ -266,7 +266,7 @@ const bills = [125, 555, 44];
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills, tips, total);
-*/
+
 
 
 // Objects
@@ -312,3 +312,53 @@ console.log(jonas);
 
 
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends and his best friend is ${jonas.friends[0]}`);
+*/
+
+
+
+// Object Methods
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Steven', 'Peter'],
+    hasDriversLicense: true,
+
+    // calcAge: function (birthYear) {
+    //     return 2037 - birthYear;
+    // }
+    // calcAge: function () {
+    //     console.log(this);
+    //     return 2037 - this.birthYear;
+    // }
+
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`;
+    }
+};
+
+console.log(jonas.calcAge());
+// console.log(jonas['calcAge'](1991));
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+
+
+// Challenge
+// 'Jonas is a 46-years old teacher, and he has a/no driver's license'
+console.log(jonas.getSummary());
+
+if (jonas.hasDriversLicense) {
+    jonas.hasDriversLicense = 'a';
+} else {
+    jonas.hasDriversLicense = 'no';
+}
+const getSummary = (`${jonas.firstName} is a ${jonas.age}-year old ${jonas.job}, and he has ${jonas.hasDriversLicense} driver's license`);
+console.log(getSummary);
