@@ -191,6 +191,8 @@ console.log(friends[friends.length - 1]);
 friends[2] = 'Jay';
 console.log(friends);
 // friends = ['Bob', 'Alice']   this is not valid!!!!!!!
+friends[0] = 'john';
+console.log(friends);
 
 const firstName = 'Jonas';
 const jonas = [firstName, 'Schmedtmann', 2037 - 1991, 'teacher', friends];
@@ -269,6 +271,7 @@ console.log(bills, tips, total);
 
 
 
+////////////////////////////////////////////////
 // Objects
 
 // // this is array
@@ -310,11 +313,12 @@ jonas.location = 'Portugal';
 jonas['twitter'] = '@jonasschmedtman';
 console.log(jonas);
 
+// "Jonas has 3 friends and his best friend is called Michael."
 
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends and his best friend is ${jonas.friends[0]}`);
+
+
 */
-
-
 
 // Object Methods
 const jonas = {
@@ -328,13 +332,13 @@ const jonas = {
     // calcAge: function (birthYear) {
     //     return 2037 - birthYear;
     // }
-    // calcAge: function () {
+    // calcAge: function () {             //here () represents 'this' which is used instead of 'objects name'
     //     console.log(this);
     //     return 2037 - this.birthYear;
     // }
 
-    calcAge: function () {
-        this.age = 2037 - this.birthYear;
+    calcAge: function () {                 //here also () represents 'this' which is used instead of 'objects name'
+        this.age = 2037 - this.birthYear;   // here we set new property 'age' like normally in objects( just now in the function) using 'this' method!
         return this.age;
     },
 
@@ -354,11 +358,3 @@ console.log(jonas.age);
 // Challenge
 // 'Jonas is a 46-years old teacher, and he has a/no driver's license'
 console.log(jonas.getSummary());
-
-if (jonas.hasDriversLicense) {
-    jonas.hasDriversLicense = 'a';
-} else {
-    jonas.hasDriversLicense = 'no';
-}
-const getSummary = (`${jonas.firstName} is a ${jonas.age}-year old ${jonas.job}, and he has ${jonas.hasDriversLicense} driver's license`);
-console.log(getSummary);
