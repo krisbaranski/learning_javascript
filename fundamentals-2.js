@@ -1,9 +1,7 @@
 'use strict';
-//Activating Strict Mode
-
-
 
 /*
+//Activating Strict Mode
 //////////////////////////////////////
 let hasDriversLicense = false;
 const passTest = true;
@@ -14,6 +12,10 @@ if (hasDriversLicense) console.log('I can drive');
 // const interface = 'Audio'; 'interface' reserved as defined variables and can't be used
 // const private = 345;      'private' reserved as defined variables and can't be used
 // const if;            'if' reserved as defined variables and can't be used
+
+
+
+
 
 
 
@@ -172,6 +174,12 @@ checkWinner(scoreDolphins, scoreKoalas);
 
 
 
+
+
+
+
+
+
 ///////////////////////////////////////////
 // Arrays
 const friend1 = 'Michael';
@@ -254,20 +262,28 @@ if (friends.includes('Steven')) {
 
 // Coding Challenge #2
 // my solution
-// let bill = 100;
-// const calcTip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-// const totalValue = calcTip + bill;
-// console.log(totalValue);
+let bill = 100;
+const calcTip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+const totalValue = calcTip + bill;
+console.log(totalValue);
+
+*/
+// const calcTip = function (bill) {
+//     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// }
+
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// console.log(bills, tips, total);
+
+/*
 
 
-const calcTip = function (bill) {
-    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-}
 
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(bills, tips, total);
+
+
+
 
 
 
@@ -318,7 +334,7 @@ console.log(jonas);
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends and his best friend is ${jonas.friends[0]}`);
 
 
-*/
+
 
 // Object Methods
 const jonas = {
@@ -329,16 +345,24 @@ const jonas = {
     friends: ['Michael', 'Steven', 'Peter'],
     hasDriversLicense: true,
 
+
+    // //this is not working, birthYear must be defined and is not connected with 'object jonas'!
     // calcAge: function (birthYear) {
     //     return 2037 - birthYear;
-    // }
-    // calcAge: function () {             //here () represents 'this' which is used instead of 'objects name'
+    // },
+
+    //here () represents 'this' which is used instead of 'objects name'
+    // calcAge: function () {
     //     console.log(this);
     //     return 2037 - this.birthYear;
-    // }
+    // },
 
-    calcAge: function () {                 //here also () represents 'this' which is used instead of 'objects name'
-        this.age = 2037 - this.birthYear;   // here we set new property 'age' like normally in objects( just now in the function) using 'this' method!
+
+
+    //here also () represents 'this' which is used instead of 'objects name'
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        // here we set new property 'age' like normally in objects( just now in the function) using 'this' method!
         return this.age;
     },
 
@@ -358,3 +382,189 @@ console.log(jonas.age);
 // Challenge
 // 'Jonas is a 46-years old teacher, and he has a/no driver's license'
 console.log(jonas.getSummary());
+
+
+
+// Coding Challenge #3
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function () {
+        this.BMI = this.mass / this.height ** 2;
+        return this.BMI;
+    }
+};
+mark.calcBMI();
+console.log(mark);
+console.log(mark.BMI);
+
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function () {
+        this.BMI = this.mass / this.height ** 2;
+        return this.BMI;
+    }
+};
+john.calcBMI();
+console.log(john.BMI);
+console.log(john);
+
+
+if (mark.BMI > john.BMI) {
+    console.log(`${mark.fullName}'s BMI (${mark.BMI}) is higher than ${john.fullName}'s (${john.BMI})`);
+} else {
+    console.log(`${john.fullName}'s BMI (${john.BMI}) is higher than ${mark.fullName}'s (${mark.BMI})`);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+// Iteration: The for LOOP
+
+console.log('Lifting weights repetition 1 ')// we can repeat it many times but its wrong!
+
+
+// for loop keeps running while condition is true
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}`);
+}
+
+
+// LOOPing Arrays, Breaking and Continuing
+const jonas = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['MIchael', 'Peter', 'Steven'],
+    true
+];
+
+// console.log(jonas[0]);
+// console.log(jonas[1]);
+// ...
+// console.log(jonas[4]);
+// jonas [5] doens't exist
+
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+    // reading from jonasArray
+    console.log(jonas[i], typeof jonas[i]);
+
+    // filling typesArray
+    // types[i] = typeof jonas[i];
+    types.push(typeof jonas[i]);
+};
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+// continue and break statement
+console.log('-----ONLY Strings-----');
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] !== 'string') continue;
+    console.log(jonas[i], typeof jonas[i]);
+};
+
+console.log('-----BREAK with Number -----');
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] === 'number') break;
+    console.log(jonas[i], typeof jonas[i]);
+};
+
+
+
+// Loop backwards, Loop in Loop
+const jonas = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['MIchael', 'Peter', 'Steven'],
+    true
+];
+
+for (let i = jonas.length - 1; i >= 0; i--) {
+    console.log(i, jonas[i]);
+};
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`--------------Starting exercise ${exercise}`);
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Lifting weigth repetition ${rep}`);
+    };
+}
+
+
+
+// WHILE Loop
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}`);
+}
+
+let rep = 1;
+while (rep <= 10) {
+    console.log(`WHILE: Lifting weights repetition ${rep}`);
+    rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log(`Loop is about to end...`);
+}
+*/
+
+
+
+// Coding Challenge #4
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+for (let bill = 0; bill <= bills.length - 1; bill++) {
+    calcTip.push(bills[bill]);
+    console.log(calcTip);
+    tips.push(calcTip());
+    totals.push(bills + tips);
+}
+console.log(totals);
+
+
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+console.log(ages);
