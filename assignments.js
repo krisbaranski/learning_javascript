@@ -371,7 +371,7 @@ const myCountry = {
     describe: function () {
         return `${this.country} has ${this.
             population} million ${this.language}-speaking
-        people, ${this.neighbours.length} neighbouring 
+        people, ${this.neighbours.length} neighbouring
         countries and a capital called ${this.capital}.`;
     }
     chsckisIsland = isIsland ? myCountry.neighbours.
@@ -380,7 +380,7 @@ length = 0 : myCountry.neighbours.length >= 1;
 
 console.log(myCountry.describe());
 myCountry.isIsland = isIsland ? myCountry.neighbours.length = 0 : myCountry.neighbours.length >= 1;
-*/
+
 
 const myCountry = {
     country: 'Finland',
@@ -408,4 +408,40 @@ const myCountry = {
 myCountry.describe();
 myCountry.checkIsland();
 console.log(myCountry);
+
+
+
+
+// for Loop
+
+// 'Voter number 1 is currently voting'
+
+for (let vote = 1; vote <= 50; vote++) {
+    console.log(`Voter number ${vote} is currently voting`);
+}
+*/
+
+
+
+// Looping Arrays, breaking ,continuing
+const populations = [10, 1441, 332, 83];
+const percentages2 = [];
+const percentageOfWorld1 = populations => (populations / 7900) * 100;
+
+for (let p = 0; p <= populations.length - 1; p++) {
+    percentages2.push(percentageOfWorld1(populations[p]));
+}
+console.log(percentages2);
+
+
+
+// Looping Backwards and Loops in Loops
+const listOfNeighbours = [
+    ['Canada', 'Mexico'],
+    ['Spain'],
+    ['Norway', 'Sweden', 'Russia']];
+
+for (let i = 0; i < listOfNeighbours.length; i++)
+    for (let y = 0; y < listOfNeighbours[i].length; y++)
+        console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
 
