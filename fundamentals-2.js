@@ -122,6 +122,10 @@ console.log(yearsUntilRetirement(1970, 'Mike'));
 
 
 
+
+
+
+
 // Coding Challenge #1
 const calcAverage = score => score;
 // const scoreD = (44 + 23 + 71) / 3;
@@ -260,6 +264,12 @@ if (friends.includes('Steven')) {
 }
 
 
+
+
+
+
+
+
 // Coding Challenge #2
 // my solution
 let bill = 100;
@@ -267,7 +277,9 @@ const calcTip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 const totalValue = calcTip + bill;
 console.log(totalValue);
 
-*/
+
+
+
 // const calcTip = function (bill) {
 //     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 // }
@@ -277,7 +289,7 @@ console.log(totalValue);
 // const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 // console.log(bills, tips, total);
 
-/*
+
 
 
 
@@ -382,6 +394,12 @@ console.log(jonas.age);
 // Challenge
 // 'Jonas is a 46-years old teacher, and he has a/no driver's license'
 console.log(jonas.getSummary());
+
+
+
+
+
+
 
 
 
@@ -537,34 +555,52 @@ while (dice !== 6) {
     dice = Math.trunc(Math.random() * 6) + 1;
     if (dice === 6) console.log(`Loop is about to end...`);
 }
-*/
+
+
+
+
+
+
+
+
 
 
 
 // Coding Challenge #4
 
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-const tips = [];
-const totals = [];
-
 const calcTip = function (bill) {
     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 };
 
-for (let bill = 0; bill <= bills.length - 1; bill++) {
-    calcTip.push(bills[bill]);
-    console.log(calcTip);
-    tips.push(calcTip());
-    totals.push(bills + tips);
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let a = 0; a <= bills.length - 1; a++) {
+    tips.push(calcTip(bills[a]));
+
+    totals.push(bills[a] + tips[a]);
 }
-console.log(totals);
+
+console.log(bills, tips, totals);
 
 
 
-const years = [1991, 2007, 1969, 2020];
-const ages = [];
+// calculate average sum of any array and in the end divide it
 
-for (let i = 0; i < years.length; i++) {
-    ages.push(2037 - years[i]);
+const calcAverage = function (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        // sum = sum + arr[i];
+        sum += arr[i];
+    }
+    return sum / arr.length;
 }
-console.log(ages);
+
+console.log(calcAverage([2, 3, 6]));
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
+
+*/
+
+
