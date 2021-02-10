@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 ///////////////////////// Epoxidharz Calculator /////////////////////////////////////
 const calcEpoxy = (h, w, d) => (h * w * d) / 900;
@@ -14,11 +14,7 @@ const howMuchMoney = calcMaterial(170, 85, 4); //here you put data to calculate 
 
 console.log(`I take ${howMuchMoney} €`);
 
-
 ////////////////////////////////////////
-
-
-
 
 /*
 // Values and Variables
@@ -60,7 +56,6 @@ const continent = 'Europe';
 let population = 11;
 const isIsland = false;
 */
-
 
 // basic operations
 
@@ -421,27 +416,23 @@ for (let vote = 1; vote <= 50; vote++) {
 }
 */
 
-
-
 // Looping Arrays, breaking ,continuing
 const populations = [10, 1441, 332, 83];
 const percentages2 = [];
-const percentageOfWorld1 = populations => (populations / 7900) * 100;
+const percentageOfWorld1 = (populations) => (populations / 7900) * 100;
 
 for (let p = 0; p <= populations.length - 1; p++) {
-    percentages2.push(percentageOfWorld1(populations[p]));
+  percentages2.push(percentageOfWorld1(populations[p]));
 }
 console.log(percentages2);
 
-
-
 // Looping Backwards and Loops in Loops
 const listOfNeighbours = [
-    ['Canada', 'Mexico'],
-    ['Spain'],
-    ['Norway', 'Sweden', 'Russia']];
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"],
+];
 
 for (let i = 0; i < listOfNeighbours.length; i++)
-    for (let y = 0; y < listOfNeighbours[i].length; y++)
-        console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
-
+  for (let y = 0; y < listOfNeighbours[i].length; y++)
+    console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
