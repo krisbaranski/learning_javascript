@@ -1,21 +1,5 @@
 "use strict";
 
-///////////////////////// Epoxidharz Calculator /////////////////////////////////////
-const calcEpoxy = (h, w, d) => (h * w * d) / 900;
-
-const howMuchEpoxy = calcEpoxy(20, 170, 4); //here you put data to calculate Epoxy!!
-
-console.log(`I must use ${howMuchEpoxy} kg Epoxy`);
-////////////////////////////////////////////
-
-const calcMaterial = (h, w, d) => (h * w * d) / 30;
-
-const howMuchMoney = calcMaterial(170, 85, 4); //here you put data to calculate Epoxy!!
-
-console.log(`I take ${howMuchMoney} €`);
-
-////////////////////////////////////////
-
 /*
 // Values and Variables
 
@@ -436,3 +420,5 @@ const listOfNeighbours = [
 for (let i = 0; i < listOfNeighbours.length; i++)
   for (let y = 0; y < listOfNeighbours[i].length; y++)
     console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
+
+// while loop
