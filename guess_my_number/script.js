@@ -1,16 +1,18 @@
 'use strict';
 
+const again = document.querySelector('.again');
+const check = document.querySelector('.check');
 // The Driest Script i can ;-)
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
 
-// using functionality for repeating text, examlpe on class.message!!!
+// using functionality for repeating text, example on class.message!!!
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
 
-document.querySelector('.again').addEventListener('click', function () {
+again.addEventListener('click', function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   document.querySelector('.number').textContent = '?';
@@ -21,7 +23,7 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.number').style.width = '15rem';
 });
 
-document.querySelector('.check').addEventListener('click', function () {
+check.addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
