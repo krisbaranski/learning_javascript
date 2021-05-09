@@ -1,5 +1,25 @@
 'use strict';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    // computing
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    // computing
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    // computing can also be [`day-${2 + 4}`]
+    open: 0, // Open 24 hours
+    close: 12 + 12, // automatically calc 24
+  },
+};
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -7,25 +27,16 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  //   ES6 Enhanced object literals
+  openingHours,
+  //   before we would need to write
+  // openingHours: openingHours,
 
-  order: function (starterIndex, mainIndex) {
+  //   ES6 Enhanced object literals for the functions
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-
+  // old function
   orderDelivery: function ({
     starterIndex = 1,
     mainIndex = 0,
@@ -61,15 +72,62 @@ restaurant.orderDelivery({
   address: 'Via del Sol',
   starterIndex: 1,
 });
+
 //
+//
+//
+//
+///////////////////////////////////////
+// Optional chaining (?.)
+///////////////////////////////////////
+// without Optional chaining
+// if (restaurant.openingHours && restaurant.openingHours.mon) {
+//   console.log(restaurant.openingHours.mon.open);
+// }
+// // here we get error without Optional chaining
+// // console.log(restaurant.openingHours.mon.open);
+// // with Optional chaining we get undefined
+// console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours?.mon?.open);
+
+// // Example
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// for (const day of days) {
+//   console.log(day);
+//   const open = restaurant.openingHours[day]?.open ?? 'closed'; // if || 0 on satunrday would be false, with ?? nullish will igore 0
+//   console.log(`On ${day}, we open at ${open}`);
+// }
+
+// // Methods
+// console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+// console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist'); // this method doesnt exist
+
+// // Arrays
+// const users = [{ name: 'Jonas', mail: 'mail@mail.io' }];
+// console.log(users[0]?.name ?? 'User doesnt exist');
+
+// // loooonger old version
+// // const users = [];
+// if (users.length > 0) console.log(users[0].name);
+// else console.log('User doesnt exist');
+
 //
 //
 //
 ///////////////////////////////////////
 // Looping arrays for-of
 ///////////////////////////////////////
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-for (const items of menu) console.log(items);
+// for current element
+//
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for (const item of menu) console.log(item);
+
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+// console.log([...menu.entries()]);
+
 //
 //
 //
