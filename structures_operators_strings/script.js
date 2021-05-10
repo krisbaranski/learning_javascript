@@ -147,16 +147,33 @@ for (const [n, p] of goals.entries()) {
 }
 
 // 2.
-const values2 = Object.entiries(odds);
-const averageOdd = function (arr) {
+const values2 = Object.values(game.odds);
+// console.log(values2);
+
+const averageOdd = function (...arr) {
   let sum = 0;
-  for (let x of values2) sum += arr[x];
+  for (let i = 0; i < arr.length; i++) sum += arr[i];
   return sum / arr.length;
 };
-
-console.log(averageOdd(values2));
+console.log(averageOdd(...values2));
 
 // 3.
+const odds2 = Object.entries(game.odds);
+console.log(odds2);
+// const { team1, team2, ...other } = game;
+// console.log(game);
+const odds = game.team1 || game.team2 ? 'victory' : 'draw';
+for (const [t, o] of odds2) {
+  console.log(`Odd of ${odds} ${t}: ${o}`);
+}
+
+// 4.
+let scorers = [...game.scored];
+console.log(...scorers);
+[...scorers] = [];
+for (let score of scorers.entries()) {
+  let sum = 0;
+}
 
 //
 //
@@ -166,29 +183,29 @@ console.log(averageOdd(values2));
 // Looping Objects
 ///////////////////////////////////////
 // object keys/ property NAMES
-const properties = Object.keys(openingHours);
-console.log(properties);
+// const properties = Object.keys(openingHours);
+// console.log(properties);
 
-let openStr = `We are open on ${properties.length} days: `;
-for (const day of properties) {
-  openStr += `${day}, `;
-}
-console.log(openStr);
+// let openStr = `We are open on ${properties.length} days: `;
+// for (const day of properties) {
+//   openStr += `${day}, `;
+// }
+// console.log(openStr);
 
-// property VALUES
-const values = Object.values(openingHours);
-console.log(values);
+// // property VALUES
+// const values = Object.values(openingHours);
+// console.log(values);
 
-// property ENTRIES
-const entries = Object.entries(openingHours);
-console.log(entries);
+// // property ENTRIES
+// const entries = Object.entries(openingHours);
+// console.log(entries);
 
-// [key, value] can be destructured inside of the loop object
-for (const [key, { open, close }] of entries) {
-  // in this case we also destructured inside of the loop object
-  console.log(`On the ${key} we open at ${open} and close at ${close}`);
-}
-//
+// // [key, value] can be destructured inside of the loop object
+// for (const [key, { open, close }] of entries) {
+//   // in this case we also destructured inside of the loop object
+//   console.log(`On the ${key} we open at ${open} and close at ${close}`);
+// }
+// //
 //
 //
 //
