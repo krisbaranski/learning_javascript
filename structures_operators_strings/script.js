@@ -145,11 +145,13 @@ const goals = [...game.scored];
 for (const [n, p] of goals.entries()) {
   console.log(`Goal ${n + 1}: ${p}`);
 }
+// Jonas version
+// for (const [i, player] of game.scored.entries())
+//   console.log(`Goal ${i + 1}: ${player}`);
 
 // 2.
 const values2 = Object.values(game.odds);
 // console.log(values2);
-
 const averageOdd = function (...arr) {
   let sum = 0;
   for (let i = 0; i < arr.length; i++) sum += arr[i];
@@ -157,16 +159,28 @@ const averageOdd = function (...arr) {
 };
 console.log(averageOdd(...values2));
 
-// 3.
+// // Jonas version
+// const odds = Object.values(game.odds);
+// let average = 0;
+// for (const odd of odds) average += odd;
+// average /= odds.length;
+// console.log(average);
+
+// // 3.
 const odds2 = Object.entries(game.odds);
 console.log(odds2);
-// const { team1, team2, ...other } = game;
-// console.log(game);
+const { team1, team2, ...other } = game;
+console.log(game);
 const odds = game.team1 || game.team2 ? 'victory' : 'draw';
 for (const [t, o] of odds2) {
   console.log(`Odd of ${odds} ${t}: ${o}`);
 }
 
+// Jonas version
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
+}
 // 4.
 let scorers = [...game.scored];
 console.log(...scorers);
