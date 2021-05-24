@@ -182,11 +182,16 @@ for (const [team, odd] of Object.entries(game.odds)) {
   console.log(`Odd of ${teamStr}: ${odd}`);
 }
 // 4.
-let scorers = [...game.scored];
+// - create scorers Object from game
+// - players from game.scored as name and number of goals
+// - loop and sum multiple goals
+
+const { scored: scorers } = game;
 console.log(...scorers);
-[...scorers] = [];
-for (let score of scorers.entries()) {
-  let sum = 0;
+
+for (let [name, score] of scorers.entries()) {
+  for (const name of scorers) {
+  }
 }
 
 //
