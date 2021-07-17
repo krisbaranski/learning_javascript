@@ -218,103 +218,213 @@ const renderCountry = function (data, className) {
 //   //     });
 // };
 
-btn.addEventListener('click', function () {
-  getCountryData('portugal');
-});
+// btn.addEventListener('click', function () {
+//   getCountryData('portugal');
+// });
 
-// getCountryData('austria');
+// // getCountryData('austria');
+
+// //
+// // ////////////
+// //
+// // Challenge 1
+// //
+// // ////////////
+// //
+// const getCountryData = function (country) {
+//   // Country 1
+//   fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+//     .then(response => {
+//       console.log(response);
+
+//       // throwing error for no response
+//       if (!response.ok)
+//         throw new Error(`Country not found (${response.status})`);
+
+//       return response.json();
+//       // handling error which could might appear caused of offline / no connection
+//       err => alert(err);
+//     })
+//     .then(data => {
+//       renderCountry(data[0]);
+//       // const neighbour = data[0].borders[0];
+//       const neighbour = 'afdgasdfasdf';
+//       if (!neighbour) return;
+
+//       //       // Country 2
+//       return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
+//     })
+//     // then method is only called when the promise is fullfilled
+//     .then(response => {
+//       if (!response.ok)
+//         throw new Error(`Country not found (${response.status})`);
+//       return response.json();
+//     })
+
+//     .then(data => {
+//       renderCountry(data, 'neighbour');
+//     })
+//     // this method is catching all errors from the fetch and is only called when the promise is rejected
+//     .catch(err => {
+//       console.error(`${err} ∞ ∞ ∞`);
+//       renderError(`Something went wrong ${err.message} Try again!`);
+//     })
+//     // this smethod is not always useful, but it will always be called regardless promises
+//     .finally(() => {
+//       countriesContainer.style.opacity = 1;
+//     });
+// };
+
+// const renderCoordinates = function (data, className) {};
+
+// const renderError = function (msg) {
+//   console.log('Catch error!');
+// };
+
+// const whereAmI = function (lat, lng) {
+//   fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`).then(response => {
+//     console.log(response);
+//     if (!response.ok)
+//       throw new Error(`No response from geocoding ${response.status}`);
+//     return response
+//       .json()
+
+//       .then(data => {
+//         renderCoordinates(data[0]);
+//         console.log(data);
+//         console.log(`You are in ${data.city}, ${data.country}`);
+
+//         return fetch(`https://restcountries.eu/rest/v2/name/${data.country}`)
+//           .then(response => {
+//             // throwing error for no response
+//             if (!response.ok)
+//               throw new Error(`Country not found (${response.status})`);
+
+//             return response.json();
+//             //       // handling error which could might appear caused of offline / no connection
+//             //       // err => alert(err)
+//           })
+//           .then(data => {
+//             renderCountry(data[0]);
+//           })
+//           .catch(err => {
+//             console.error('Something went wrong!');
+//             renderError(`Catched error!!! ${error.message}`);
+//           });
+//       });
+//   });
+// };
+
+// whereAmI(52.508, 13.381);
+// whereAmI(19.037, 72.873);
+// whereAmI(-33.933, 18.474);
+
+// //
+// //
+// // Promise
+// //
+// //
+// const lotteryPromise = new Promise(function (resolve, reject) {
+//   console.log('Lottery draw is happening');
+//   setTimeout(function () {
+//     if (Math.random() >= 0.5) {
+//       resolve('You WIN :-)');
+//     } else {
+//       reject(new Error('You loose'));
+//     }
+//   }, 2000);
+// });
+
+// lotteryPromise.then(res => console.log(res)).catch(err => console.error(err));
 
 //
-// ////////////
 //
-// Challenge 1
+// Promisifying setTimeout
 //
-// ////////////
 //
-const getCountryData = function (country) {
-  // Country 1
-  fetch(`https://restcountries.eu/rest/v2/name/${country}`)
-    .then(response => {
-      console.log(response);
+// const wait = function (seconds) {
+//   return new Promise(function (resolve) {
+//     setTimeout(resolve, seconds * 1000);
+//   });
+// };
 
-      // throwing error for no response
-      if (!response.ok)
-        throw new Error(`Country not found (${response.status})`);
+// wait(1)
+//   .then(() => {
+//     console.log('1 second passed');
+//     return wait(1);
+//   })
+//   .then(() => {
+//     console.log('2 seconds passed');
+//     return wait(1);
+//   })
+//   .then(() => {
+//     console.log('3 seconds passed');
+//     return wait(1);
+//   });
 
-      return response.json();
-      // handling error which could might appear caused of offline / no connection
-      err => alert(err);
-    })
-    .then(data => {
-      renderCountry(data[0]);
-      // const neighbour = data[0].borders[0];
-      const neighbour = 'afdgasdfasdf';
-      if (!neighbour) return;
+// Promise.resolve('abc').then(x => console.log(x));
+// Promise.reject(new Error('Problem!')).catch(x => console.error(x));
 
-      //       // Country 2
-      return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
-    })
-    // then method is only called when the promise is fullfilled
-    .then(response => {
-      if (!response.ok)
-        throw new Error(`Country not found (${response.status})`);
-      return response.json();
-    })
+//
+//
+// Promisifying geolocation API
+//
+//
 
-    .then(data => {
-      renderCountry(data, 'neighbour');
-    })
-    // this method is catching all errors from the fetch and is only called when the promise is rejected
-    .catch(err => {
-      console.error(`${err} ∞ ∞ ∞`);
-      renderError(`Something went wrong ${err.message} Try again!`);
-    })
-    // this smethod is not always useful, but it will always be called regardless promises
-    .finally(() => {
-      countriesContainer.style.opacity = 1;
-    });
-};
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    // first version
+    // navigator.geolocation.getCurrentPosition(
+    //   position => resolve(position),
+    //   err => reject(err)
+    // );
 
-const renderCoordinates = function (data, className) {};
-
-const renderError = function (msg) {
-  console.log('Catch error!');
-};
-
-const whereAmI = function (lat, lng) {
-  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`).then(response => {
-    console.log(response);
-    if (!response.ok)
-      throw new Error(`No response from geocoding ${response.status}`);
-    return response
-      .json()
-
-      .then(data => {
-        renderCoordinates(data[0]);
-        console.log(data);
-        console.log(`You are in ${data.city}, ${data.country}`);
-
-        return fetch(`https://restcountries.eu/rest/v2/name/${data.country}`)
-          .then(response => {
-            // throwing error for no response
-            if (!response.ok)
-              throw new Error(`Country not found (${response.status})`);
-
-            return response.json();
-            //       // handling error which could might appear caused of offline / no connection
-            //       // err => alert(err)
-          })
-          .then(data => {
-            renderCountry(data[0]);
-          })
-          .catch(err => {
-            console.error('Something went wrong!');
-            renderError(`Catched error!!! ${error.message}`);
-          });
-      });
+    // second version (same result)
+    navigator.geolocation.getCurrentPosition(resolve, reject);
   });
 };
 
-whereAmI(52.508, 13.381);
-whereAmI(19.037, 72.873);
-whereAmI(-33.933, 18.474);
+getPosition().then(pos => console.log(pos));
+
+const whereAmI = function () {
+  getPosition()
+    .then(pos => {
+      const { latitude: lat, longitude: lng } = pos.coords;
+
+      return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    })
+
+    .then(res => {
+      if (!res.ok) throw new Error(`No response from geocoding ${res.status}`);
+      return res.json();
+    })
+
+    .then(data => {
+      console.log(data);
+      console.log(`You are in ${data.city}, ${data.country}`);
+
+      return fetch(`https://restcountries.eu/rest/v2/name/${data.country}`)
+        .then(response => {
+          // throwing error for no response
+          if (!response.ok)
+            throw new Error(`Country not found (${response.status})`);
+
+          return response.json();
+          //       // handling error which could might appear caused of offline / no connection
+          //       // err => alert(err)
+        })
+        .then(data => {
+          renderCountry(data[0]);
+        })
+        .catch(err => {
+          console.error(`${error.message}`);
+        });
+    });
+};
+
+btn.addEventListener('click', whereAmI);
+
+//
+//
+// Coding Chellange
+//
